@@ -1,4 +1,7 @@
-let autos = require('./autos') /* requerir módulo autos */
+import autos from './autos'; 
+
+
+
 
 let personaDePrueba=
     {
@@ -77,7 +80,7 @@ let concesionaria = {
 
     puedeComprar: function(auto={},persona={}){
         let precio=auto.precio;
-        let cuotas=auto.cuotas
+        let cuotas=auto.cuotas;
         let costoCuota=precio/cuotas; 
         if(persona.capacidadDePagoTotal>=precio&&persona.capacidadDePagoEnCuotas>=costoCuota){
             return true
@@ -94,7 +97,7 @@ let concesionaria = {
         for(let i=0;i<autos.length;i++){
             if(this.puedeComprar(autos[i],persona)){
                // listaDe.push('el auto: '+autos[i].marca+' '+autos[i].modelo+' lo puede comprar!!!')
-               listaDe.push(autos[1]) 
+               listaDe.push(autos[i]) 
                acum++
             }
         }
@@ -108,3 +111,7 @@ let concesionaria = {
 
 
  }
+
+ console.log(concesionaria.venderAuto('GCN271'))
+ 
+ console.log(concesionaria.listaDeVentas())

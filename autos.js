@@ -32,4 +32,4 @@ let autos=[
         vendido:false,
     }
     ]
-    module.exports = autos
+    export default autos
